@@ -1,0 +1,42 @@
+#include<stdio.h>
+void main(){
+    int arr[20],i,min,max,nmin,nmax,n,minpos=0,maxpos=0;
+    printf("Enter n:");
+    scanf("%d",&n);
+    printf("Enter elements:");
+    for(i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+   min=max=arr[0];
+    for(i=1;i<n;i++){
+        if(arr[i]<min){
+            min=arr[i];
+            minpos=i;
+        }
+        if(arr[i]>max){
+            max=arr[i];
+            maxpos=i;
+        }
+    }
+    for(i=0;i<n;i++){
+       if(i!=minpos && i!=maxpos){
+       nmin=nmax=arr[i];
+       break;
+       }
+   }
+    
+    for(i=0;i<n;i++){
+        if(i==minpos||i==maxpos){
+            continue;
+        }
+        else{
+            if(arr[i]<nmin){
+            nmin=arr[i];
+            }
+            if(arr[i]>nmax){
+            nmax=arr[i];
+            }
+        }
+    }
+    printf("The second minimum and  maximum elements in array are %d and %d respectively",nmin,nmax);
+}
