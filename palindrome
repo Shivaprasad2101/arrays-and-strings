@@ -1,0 +1,25 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<string.h>
+int main() {
+    // Write C code here
+   char str[100]="amma";
+   int front=0,rear=strlen(str)-1,flag=0;
+   while(front<=rear){
+       if(str[front]==str[rear]){
+           flag=1;
+       }
+       else
+       flag=0;
+       front++;
+       rear--;
+   }
+   if(flag==1){
+       printf("Palindrome!");
+   }
+   else{
+       printf("Not a palindrome!");
+   }
+
+    return 0;
+}
