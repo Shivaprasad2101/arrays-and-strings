@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main() {
+    // Write C code here
+     char str1[100],str2[100];
+     int freq1[256]={0};
+     int freq2[256]={0};
+     printf("enter first string:");
+     fgets(str1,sizeof(str1),stdin);
+     printf("enter second string:");
+     fgets(str2,sizeof(str2),stdin);
+     if(strlen(str1)!=strlen(str2)){
+         printf("Strings are not anagram!");
+         return 0;
+     }
+     for(int i=0;i<strlen(str1);i++){
+         freq1[(unsigned char)tolower(str1[i])]++;
+         freq2[(unsigned char)tolower(str2[i])]++;
+         
+     }
+     for(int i=0;i<256;i++){
+         if(freq1[i]!=freq2[i]){
+             printf("Strings are not anagram!");
+             return 0;
+         }
+     }
+     printf("Strings are anagram!");
+    return 0;
+}
