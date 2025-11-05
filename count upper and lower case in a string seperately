@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main(){
+    char str[100];
+    printf("enter string:");
+    fgets(str,sizeof(str),stdin);
+    int upper_count=0;
+    int lower_count=0;
+    for(int i=0;i<strlen(str);i++){
+        if(isupper(str[i])){
+           upper_count++;
+        }
+        else if(islower(str[i])){
+            lower_count++;
+        }
+    }
+    printf("No. of upper and lower case characters in the string are %d and %d respectively",upper_count,lower_count);
+    return 0;
+}
